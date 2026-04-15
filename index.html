@@ -53,9 +53,9 @@
 
         h1 { font-size: 28px; margin: 0 0 5px 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         
+        /* ВОТ ТУТ ТВОЯ ТЕНЬ ВЕРНУЛАСЬ В ПОЛНОМ ОБЪЕМЕ */
         .subtitle { 
             color: #ffffff; 
-            /* ГУСТАЯ ТЕНЬ ИЗ ВАШЕГО ПРИМЕРА */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
             font-weight: bold; 
             text-transform: uppercase; 
@@ -114,35 +114,12 @@
         }
         .track:last-child { border-bottom: none; }
         
-        .playing-indicator {
-            position: absolute;
-            left: 4px;
-            top: 13px;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 26px;
-            line-height: 1;
-            display: none; 
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-        }
-
-        .track.active-track .playing-indicator { display: block; }
-
-        .track.active-track .track-name {
-            font-weight: bold;
-            font-size: 16px; 
-            color: #ffffff;
-            text-shadow: 0 0 5px rgba(255,255,255,0.2);
-        }
+        .track.active-track { background: rgba(255, 255, 255, 0.05); }
+        .track.active-track .track-name { font-weight: bold; color: #ffffff; }
 
         .track-info { display: flex; align-items: center; margin-bottom: 8px; }
         .track-number { color: var(--color-1); font-family: monospace; font-size: 14px; margin-right: 12px; font-weight: bold; }
-        
-        .track-name { 
-            font-size: 14px; 
-            font-weight: 500; 
-            transition: all 0.3s ease;
-        }
+        .track-name { font-size: 14px; font-weight: 500; }
 
         audio { width: 100%; height: 32px; filter: brightness(1.1); }
     </style>
@@ -171,53 +148,27 @@
     </div>
 
     <div class="playlist" id="playlist">
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">01</span><span class="track-name">Technohead - Happy Birthday</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285587/01_-_Technohead_-_Happy_Birthday_Timitico_s_Party_Blast_titmo0.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">02</span><span class="track-name">Critical Mass - Believe In The Future</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776275813/01_-_Critical_Mass_-_Believe_in_the_future_Radio_Edit_fvpild.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">03</span><span class="track-name">Nakatomi - Children Of The Night</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285045/02_-_Nakatomi_-_Children_of_the_night_p6rsww.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">04</span><span class="track-name">4 Tune Fairytales - My Little Fantasy</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285103/03_-_4_Tune_Fairytales_-_My_little_fantasy_Radio_Edit_yfw4ze.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">05</span><span class="track-name">Mr. B - Love Fantasy</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285251/04_-_Mr._B_-_Love_fantasy_on06ze.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">06</span><span class="track-name">JDS - Higher Love</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285399/05_-_JDS_-_Higher_love_DJ_Slipmatt_Unreleased_Edit_nbh2sv.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">07</span><span class="track-name">Trancehistory - Doo Dey</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285431/06_-_Trancehistory_-_Doo_dey_orihp4.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">08</span><span class="track-name">Happymen - Love Is You</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285384/08_-_Happymen_-_Love_is_you_Happy_Version_rw73ea.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">09</span><span class="track-name">Tiny Hot - Discoland</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285399/09_-_Tiny_Hot_-_Discoland_Raveland_Mix_l5nlc7.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">10</span><span class="track-name">Lovelife - Hold Me</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285379/11_-_Lovelife_-_Hold_me_DJ_Tizer_s_Scratch_To_The_Maximum_xkmo0t.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">11</span><span class="track-name">Lords Of The Underworld - For The People</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285400/13_-_Lords_of_the_underworld_-_For_the_people_wya4mv.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">12</span><span class="track-name">T-Marc ft. Vincent Cleon - One Two</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285363/14_-_T-Marc_ft._Vincent_Cleon_-_One_two_nitrqy.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">13</span><span class="track-name">Skorpus Ravers vs. Cyntex - Bombdebomb</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285482/16_-_Skorpus_Ravers_vs._Cyntex_-_Bombdebomb_lnlb95.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">14</span><span class="track-name">Dionysis - Break On Through</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285682/02_-_Dionysis_-_Break_On_Through_Radio_Edit_tmmoro.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">15</span><span class="track-name">The Nightraver & DJ Trevor - The Revolution</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285724/03_-_The_Nightraver_DJ_Trevor_-_The_Revolution_Original_Version_wyu7un.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">16</span><span class="track-name">The Beatsquad - The Beat Goes On</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285780/07_-_The_Beatsquad_-_The_Beat_Goes_On_scusc4.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">17</span><span class="track-name">External - Circles</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285830/08_-_External_-_Circles_Extended_Version_bqqryw.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">18</span><span class="track-name">Human Resource - Dominator 96</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285839/09_-_Human_Resource_-_Dominator_96_lyolfk.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">19</span><span class="track-name">MC Drokz - Clear The Air</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285892/11_-_MC_Drokz_-_Clear_The_Air_havppr.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">20</span><span class="track-name">Back 2 Bass - I Wanna Be With You</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285902/10_-_Back_2_Bass_-_I_Wanna_Be_With_You_csw2j4.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">21</span><span class="track-name">Highlander - Open Your Eyes</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285904/12_-_Highlander_-_Open_Your_Eyes_bqmwqr.flac" type="audio/flac"></audio></div>
-        <div class="track"><span class="playing-indicator">*</span><div class="track-info"><span class="track-number">22</span><span class="track-name">Solid Base - Can't Stop</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776286003/14_-_Solid_Base_-_Can_t_Stop_vluegu.flac" type="audio/flac"></audio></div>
-    </div>
+        <div class="track"><div class="track-info"><span class="track-number">01</span><span class="track-name">Technohead - Happy Birthday</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776285587/01_-_Technohead_-_Happy_Birthday_Timitico_s_Party_Blast_titmo0.flac" type="audio/flac"></audio></div>
+        <div class="track"><div class="track-info"><span class="track-number">02</span><span class="track-name">Critical Mass - Believe In The Future</span></div><audio controls preload="none"><source src="https://res.cloudinary.com/dny7japw9/video/upload/v1776275813/01_-_Critical_Mass_-_Believe_in_the_future_Radio_Edit_fvpild.flac" type="audio/flac"></audio></div>
+        </div>
 </div>
 
 <script>
     const audios = document.querySelectorAll('audio');
     const tracks = document.querySelectorAll('.track');
     const masterPlayBtn = document.getElementById('masterPlayBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
     const playIcon = document.getElementById('playIcon');
     const pauseIcon = document.getElementById('pauseIcon');
-    
     let currentIdx = 0;
 
-    function updateState() {
+    function updateUI() {
         const anyPlaying = Array.from(audios).some(a => !a.paused);
         playIcon.style.display = anyPlaying ? 'none' : 'block';
         pauseIcon.style.display = anyPlaying ? 'block' : 'none';
-
-        tracks.forEach((track, idx) => {
-            if (idx === currentIdx && anyPlaying) {
-                track.classList.add('active-track');
-            } else {
-                track.classList.remove('active-track');
-            }
+        
+        tracks.forEach((t, i) => {
+            if (i === currentIdx && anyPlaying) t.classList.add('active-track');
+            else t.classList.remove('active-track');
         });
     }
 
@@ -225,41 +176,30 @@
         audio.onplay = () => {
             currentIdx = idx;
             audios.forEach(a => { if(a !== audio) a.pause(); });
-            updateState();
+            updateUI();
         };
-        audio.onpause = updateState;
+        audio.onpause = updateUI;
         audio.onended = () => {
-            if (idx + 1 < audios.length) {
-                audios[idx+1].play();
-                audios[idx+1].parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+            if (idx + 1 < audios.length) audios[idx+1].play();
         };
     });
 
     masterPlayBtn.onclick = () => {
         const active = Array.from(audios).find(a => !a.paused);
-        if (active) active.pause();
-        else audios[currentIdx].play();
+        if (active) active.pause(); else audios[currentIdx].play();
     };
-
-    nextBtn.onclick = () => {
+    
+    document.getElementById('nextBtn').onclick = () => {
         audios[currentIdx].pause();
         currentIdx = (currentIdx + 1) % audios.length;
         audios[currentIdx].play();
-        tracks[currentIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    prevBtn.onclick = () => {
-        if (audios[currentIdx].currentTime > 3) {
-            audios[currentIdx].currentTime = 0;
-        } else {
-            audios[currentIdx].pause();
-            currentIdx = (currentIdx - 1 + audios.length) % audios.length;
-            audios[currentIdx].play();
-            tracks[currentIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+    document.getElementById('prevBtn').onclick = () => {
+        audios[currentIdx].pause();
+        currentIdx = (currentIdx - 1 + audios.length) % audios.length;
+        audios[currentIdx].play();
     };
 </script>
-
 </body>
 </html>
