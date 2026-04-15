@@ -42,6 +42,8 @@
             margin-bottom: 30px;
         }
 
+        .text-block { text-align: left; }
+
         .cover-art { 
             width: 100%; aspect-ratio: 1/1; border-radius: 12px; 
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6); 
@@ -49,23 +51,36 @@
             display: block;
         }
 
-        h1 { font-size: 28px; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .subtitle { font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1.5px; margin-bottom: 3px; }
-        .small-desc { color: var(--text-dim); font-size: 11px; margin-bottom: 8px; }
+        h1 { font-size: 28px; margin: 0 0 5px 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         
-        .discogs-link {
-            color: var(--accent-color);
-            font-size: 12px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(57, 166, 189, 0.4);
-            transition: all 0.2s;
-        }
-        .discogs-link:hover {
-            color: white;
-            border-bottom-color: white;
+        .subtitle { 
+            color: #ffffff; 
+            /* ГУСТАЯ ТЕНЬ ИЗ ВАШЕГО ПРИМЕРА */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 14px; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 3px; 
         }
 
-        .player-controls { display: flex; align-items: center; gap: 10px; }
+        .small-desc { 
+            color: var(--text-dim); 
+            font-size: 11px; 
+            margin: 0 0 8px 0; 
+            letter-spacing: 0.5px; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .info-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 11px;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .info-link:hover { color: var(--color-1); }
+
+        .player-controls { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
 
         .nav-btn, .master-play-btn {
             background: rgba(255, 255, 255, 0.1);
@@ -80,8 +95,9 @@
         }
 
         .nav-btn { width: 40px; height: 40px; }
-        .master-play-btn { width: 54px; height: 54px; border: 2px solid rgba(255,255,255,0.4); }
-        .nav-btn svg, .master-play-btn svg { fill: white; }
+        .master-play-btn { width: 54px; height: 54px; border: 2px solid rgba(255,255,255,0.4); background: var(--card-bg); }
+        .nav-btn svg { fill: white; width: 18px; height: 18px; }
+        .master-play-btn svg { fill: white; width: 22px; height: 22px; }
 
         .playlist { 
             background: var(--card-bg); 
@@ -96,6 +112,7 @@
             position: relative; 
             transition: background 0.3s ease;
         }
+        .track:last-child { border-bottom: none; }
         
         .playing-indicator {
             position: absolute;
@@ -109,9 +126,7 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
-        .track.active-track .playing-indicator {
-            display: block;
-        }
+        .track.active-track .playing-indicator { display: block; }
 
         .track.active-track .track-name {
             font-weight: bold;
@@ -121,7 +136,7 @@
         }
 
         .track-info { display: flex; align-items: center; margin-bottom: 8px; }
-        .track-number { color: var(--accent-color); font-family: monospace; font-size: 14px; margin-right: 12px; font-weight: bold; }
+        .track-number { color: var(--color-1); font-family: monospace; font-size: 14px; margin-right: 12px; font-weight: bold; }
         
         .track-name { 
             font-size: 14px; 
@@ -142,16 +157,16 @@
             <h1>Happy Hardcore 6</h1>
             <div class="subtitle">Personal Mikhas Birthday Edition</div>
             <div class="small-desc">the best tracks of 2CD tracklist</div>
-            <a href="https://www.discogs.com/release/231221-Various-Happy-Hardcore-6" target="_blank" class="discogs-link">original release at Discogs →</a>
+            <a href="https://www.discogs.com/ru/release/5703852-Various-Happy-Hardcore-6" target="_blank" class="info-link">original release info at Discogs</a>
         </div>
         
         <div class="player-controls">
-            <button class="nav-btn" id="prevBtn"><svg viewBox="0 0 24 24" width="18"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+            <button class="nav-btn" id="prevBtn"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
             <button class="master-play-btn" id="masterPlayBtn">
-                <svg id="playIcon" viewBox="0 0 24 24" width="22"><path d="M8 5v14l11-7z"/></svg>
-                <svg id="pauseIcon" viewBox="0 0 24 24" width="22" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
-            <button class="nav-btn" id="nextBtn"><svg viewBox="0 0 24 24" width="18"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+            <button class="nav-btn" id="nextBtn"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
         </div>
     </div>
 
